@@ -1,29 +1,21 @@
 {
   "name": "myflix-client",
   "version": "1.0.0",
-  "description": "",
   "dependencies": {
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
     "nodemon": "^2.0.22",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "parcel-bundler": "^1.12.5",
     "uuid": "^9.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start":  "parcel serve ./src/index.html",
-    "build": "parcel build  ./src/index.html" 
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jkeefe77/myFlix-client.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jkeefe77/myFlix-client/issues"
-  },
-  "homepage": "https://github.com/jkeefe77/myFlix-client#readme"
+  "description": ""
 }
