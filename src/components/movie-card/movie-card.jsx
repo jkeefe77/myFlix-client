@@ -1,14 +1,3 @@
-// export const MovieCard = ({ movie, onMovieClick }) => {
-//   return (
-//     <div
-//       onClick={() => {
-//         onMovieClick(movie);
-//       }}
-//     >
-//       {movie.Title}
-//     </div>
-//   );
-// };
 import React from "react";
 import PropTypes from "prop-types";
 
