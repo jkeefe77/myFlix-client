@@ -17,13 +17,13 @@ export const MainView = () => {
 
     //fetch for movies data from backend API
     fetch("https://filmsonthefly-app-ca635d09fe99.herokuapp.com/movies", {
-      headers: { Authorization: "Bearer ${token}" },
+      headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => response.json())
       .then((data) => {
         const moviesFromApi = data.map((movie) => {
           return {
-            _id: movie.id,
+            _id: movie._id,
             Title: movie.Title,
             ImagePath: movie.ImagePath,
             Description: movie.Description,
@@ -33,7 +33,7 @@ export const MainView = () => {
             Director: {
               Name: movie.Director.Name,
             },
-            Featured: movie.Featured.toString(),
+            Featured: movie.Featured,
           };
         });
         setMovies(moviesFromApi);
