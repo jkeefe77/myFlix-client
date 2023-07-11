@@ -8,3 +8,12 @@ $primary: #F25757;
 $body-bg: #F2F2F2;
 
 @import "~bootstrap/scss/bootstrap.scss";
+
+
+.link-header-light {
+  color: $white
+}
+
+.link-header-light:hover, .link-header-light:focus-within {
+  color: $primary
+}
