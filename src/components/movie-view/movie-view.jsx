@@ -4,7 +4,7 @@ import { Button, Col, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { SimilarMovies } from "./similar-movies";
 
-export const MovieView = ({ movie, user, token, updateUser }) => {
+export const MovieView = ({ movies, user, token, updateUser }) => {
   const { movieId } = useParams();
 
   const movie = movies.find((m) => m.id === movieId);
