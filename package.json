@@ -19,7 +19,8 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.9.3",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "parcel-transformer-transcrypt": "git+https://github.com/TranscryptOrg/parcel-transformer-transcrypt.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
