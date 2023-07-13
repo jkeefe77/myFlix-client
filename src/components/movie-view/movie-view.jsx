@@ -7,14 +7,14 @@ import { SimilarMovies } from "./similar-movies";
 export const MovieView = ({ movies, user, token, updateUser }) => {
   const { movieId } = useParams();
 
-  const movie = movies.find((m) => m.id === movieId);
+  const movie = movies.find((m) => movieId === movieId);
 
   const [isFavoriteMovie, setAsFavorite] = useState(
-    user.FavoriteMovies.includes(movie.id)
+    user.FavoriteMovies.includes(movieId)
   );
 
   useEffect(() => {
-    setAsFavorite(user.FavoriteMovies.includes(movie.id));
+    setAsFavorite(user.FavoriteMovies.includes(movieId));
     window.scrollTo(0, 0);
   }, [movieId]);
 
@@ -75,7 +75,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
     <>
       <Col className="mb-4">
         <div>
-          <img className="w-100 border-secondary mb-3" src={movie.image} />
+          <img className="w-100 border-secondary mb-3" src={movie.imagePath} />
         </div>
         <div>
           <span className="fw-bold">Title: </span>
@@ -83,7 +83,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
         </div>
         <div>
           <span className="fw-bold">Genre: </span>
-          <span>{movie.genre}</span>
+          <span>{movie.Genres}</span>
         </div>
         <div>
           <span className="fw-bold">Director: </span>

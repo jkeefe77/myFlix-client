@@ -10,14 +10,12 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ProfileView } from "../profile-view/profile-view";
 import { Col, Row } from "react-bootstrap";
 
-
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [movies, setMovies] = useState([]);
-  
 
   const updateUser = (user) => {
     setUser(user);
@@ -35,22 +33,29 @@ export const MainView = () => {
       .then((data) => {
         const moviesFromApi = data.map((movie) => {
           return {
-            _id: movies._id,
-            Title: movies.Title,
-            // ImagePath: movie.ImagePath,
-            // Description: movie.Description,
-            // Genres: movie.Genre,
-            // Director: movie.Director,
+            imagePath: movie.imagePath,
+            description: movie.Description,
+            director: movie.Director,
+            Genres: movie.Genres,
+            title: movie.Title,
           };
         });
         setMovies(moviesFromApi);
       });
   }, [token]);
 
+  const handleSearchInput = (e) => {
+    const searchWord = e.target.value.toLowerCase();
+    let tempArray = movies.filter((m) =>
+      m.title.toLowerCase().includes(searchWord)
+    );
+    setFilteredMovies(tempArray);
+  };
+
   return (
     <BrowserRouter>
       <Row className="justify-content-md-center">
-        <Col className="mb-4">
+        <Col className="mb-4 .bg-warning">
           <NavigationBar
             user={user}
             onLoggedOut={() => {
@@ -125,15 +130,7 @@ export const MainView = () => {
                 ) : (
                   <>
                     {movies.map((movie) => (
-                      <Col
-                        className="mb-4"
-                        key={movie.id}
-                        xxl={3}
-                        xl={4}
-                        lg={4}
-                        md={6}
-                        xs={12}
-                      >
+                      <Col key={movie.id} xxl={3} xl={4} lg={4} md={6} xs={12}>
                         <MovieCard movie={movie} />
                       </Col>
                     ))}
