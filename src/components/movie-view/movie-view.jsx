@@ -91,7 +91,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
         </div>
         <div className="mb-3">
           <span className="fw-bold">Description: </span>
-          <span>{movie.description}</span>
+          <span>{movie.Description}</span>
         </div>
         <Link to={`/`}>
           <Button variant="primary">Back</Button>
