@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
@@ -9,6 +9,7 @@ import { NavigationBar } from "../navigation-bar/navigation-bar";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ProfileView } from "../profile-view/profile-view";
 import { Col, Row } from "react-bootstrap";
+import Button from "react-bootstrap";
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -37,7 +38,7 @@ export const MainView = () => {
             Description: movie.Description,
             director: movie.Director,
             Genres: movie.Genres,
-            title: movie.Title,
+            Title: movie.Title,
             _id: movie._id,
           };
         });
@@ -45,13 +46,7 @@ export const MainView = () => {
       });
   }, [token]);
 
-  const handleSearchInput = (e) => {
-    const searchWord = e.target.value.toLowerCase();
-    let tempArray = movies.filter((m) =>
-      m.title.toLowerCase().includes(searchWord)
-    );
-    setFilteredMovies(tempArray);
-  };
+ 
 
   return (
     <BrowserRouter>

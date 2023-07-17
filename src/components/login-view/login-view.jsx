@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import { useState } from "react";
 
 export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
@@ -40,36 +38,28 @@ export const LoginView = ({ onLoggedIn }) => {
   };
 
   return (
-    <Form
-      className="border border-3 border-secondary border-opacity-50 rounded px-5 py-4 text-primary"
-      onSubmit={handleSubmit}
-    >
-      <h1 className="text-center fs-3">Welcome to myFlix</h1>
-      <Form.Group controlId="formUsername">
-        <Form.Label>Username:</Form.Label>
-        <Form.Control
+    <form onSubmit={handleSubmit}>
+      <label>
+        Username:
+        <input
           type="text"
-          autoComplete="username"
           value={username}
+          minLength="3"
+          maxLength="20"
           onChange={(e) => setUsername(e.target.value)}
           required
-          minLength="5"
         />
-      </Form.Group>
-
-      <Form.Group controlId="formPassword">
-        <Form.Label className="mt-2">Password:</Form.Label>
-        <Form.Control
+      </label>
+      <label>
+        Password:
+        <input
           type="password"
-          autoComplete="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </Form.Group>
-      <Button className="mt-3 w-100" variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+      </label>
+      <button type="submit">Submit</button>
+    </form>
   );
 };
