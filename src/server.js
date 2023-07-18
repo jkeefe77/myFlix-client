@@ -1,13 +1,18 @@
-const http = require("http");
+const allowedOrigins = ["http://localhost:1234"];
 
-let server = http
-  .createServer((req, res) => {
-    console.log( "Request Received" );
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) {
+        let message =
+          "The CORS policy for this application doesn't allow access from origin " +
+          origin;
+        return callback(new Error(message), false);
+      }
+      return callback(null, true);
+    },
   })
-  .listen(1234, () => {
-    console.log("Your App is Listening on Port 8080");
-  });
+);
 
-
-
-
+app.listen(port, () => console.log(`App listening on port ${port}!`));
