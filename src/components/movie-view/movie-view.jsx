@@ -79,7 +79,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
         </div>
         <div>
           <span className="fw-bold">Title: </span>
-          <span>{movie.title}</span>
+          <span>{movie.Title}</span>
         </div>
         <div>
           <span className="fw-bold">Genre: </span>
