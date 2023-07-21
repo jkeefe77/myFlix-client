@@ -4,7 +4,9 @@ import { Button, Col, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { SimilarMovies } from "./similar-movies";
 
+
 export const MovieView = ({ movies, user, token, updateUser }) => {
+
   const { movieId } = useParams();
 
   const movie = movies.find((m) => m._id === movieId);
@@ -17,6 +19,8 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
     setAsFavorite(user.FavoriteMovies.includes(movieId));
     window.scrollTo(0, 0);
   }, [movieId]);
+	
+
 
   const addFavorite = () => {
     fetch(
@@ -47,7 +51,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
   };
 
   const removeFavorite = () => {
-    fetch(`https://myflix-88009.herokuapp.com/users/${user._id}/${movieId}`, {
+    fetch(`https://myflix-88009.herokuapp.com/users/${username}/${movieId}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     })
