@@ -7,7 +7,7 @@ import { SimilarMovies } from "./similar-movies";
 export const MovieView = ({ movies, user, token, updateUser }) => {
   const { movieId } = useParams();
 
-  const movie = movies.find((m) => movieId === movieId);
+  const movie = movies.find((m) => m._id === movieId);
 
   const [isFavoriteMovie, setAsFavorite] = useState(
     user.FavoriteMovies.includes(movieId)
