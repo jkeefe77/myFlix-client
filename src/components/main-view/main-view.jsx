@@ -27,7 +27,7 @@ export const MainView = () => {
     if (!token) return;
 
     //fetch for movies data from backend API
-    fetch("https://filmsonthefly-app-ca635d09fe99.herokuapp.com/movies", {
+    fetch(`${process.env.API_URL}/movies`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => response.json())
@@ -45,8 +45,6 @@ export const MainView = () => {
         setMovies(moviesFromApi);
       });
   }, [token]);
-
- 
 
   return (
     <BrowserRouter>

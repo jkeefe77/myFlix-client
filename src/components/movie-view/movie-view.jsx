@@ -4,9 +4,7 @@ import { Button, Col, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { SimilarMovies } from "./similar-movies";
 
-
 export const MovieView = ({ movies, user, token, updateUser }) => {
-
   const { movieId } = useParams();
 
   const movie = movies.find((m) => m._id === movieId);
@@ -19,17 +17,12 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
     setAsFavorite(user.FavoriteMovies.includes(movieId));
     window.scrollTo(0, 0);
   }, [movieId]);
-	
-
 
   const addFavorite = () => {
-    fetch(
-      `https://myflix-88009.herokuapp.com/users/${user._id}/movies/${movieId}`,
-      {
-        method: "POST",
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    )
+    fetch(`${process.env.API_URL}/users/${user.Username}/movies/${movieId}`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}` },
+    })
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -40,7 +33,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
       })
       .then((user) => {
         if (user) {
-          alert(`"${movie.title}" was successfully added to favorites`);
+          alert(`"${movie.Title}" was successfully added to favorites`);
           setAsFavorite(true);
           updateUser(user);
         }
@@ -51,7 +44,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
   };
 
   const removeFavorite = () => {
-    fetch(`https://myflix-88009.herokuapp.com/users/${username}/${movieId}`, {
+    fetch(`${process.env.API_URL}/users/${user.Username}/movies/${movieId}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -65,7 +58,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
       })
       .then((user) => {
         if (user) {
-          alert(`"${movie.title}" was successfully deleted from favorites`);
+          alert(`"${movie.Title}" was successfully deleted from favorites`);
           setAsFavorite(false);
           updateUser(user);
         }

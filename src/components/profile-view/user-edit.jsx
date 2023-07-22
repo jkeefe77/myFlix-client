@@ -22,7 +22,7 @@ export const UserEdit = ({ user, token, updateUser, onLoggedOut }) => {
       ? (data.Birthday = birthday)
       : alert("Nothing to change!");
 
-    fetch(`https://myflix-88009.herokuapp.com/users/${user._id}`, {
+    fetch(`${process.env.API_URL}/users/${user._id}`, {
       method: "PUT",
       body: JSON.stringify(data),
       headers: {

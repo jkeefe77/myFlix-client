@@ -12,7 +12,7 @@ export const LoginView = ({ onLoggedIn }) => {
       Password: password,
     };
 
-    fetch("https://filmsonthefly-app-ca635d09fe99.herokuapp.com/login", {
+    fetch(`${process.env.API_URL}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

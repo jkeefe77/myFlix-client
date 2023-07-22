@@ -12,7 +12,7 @@ export const ProfileView = ({
   onLoggedOut,
 }) => {
   const deleteAccount = () => {
-    fetch(`https://myflix-88009.herokuapp.com/users/${user._id}`, {
+    fetch(`${process.env.API_URL}/users/${user._id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     })
