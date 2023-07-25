@@ -3,8 +3,10 @@ import { Row, Col } from "react-bootstrap";
 
 export const SimilarMovies = ({ movies, movie }) => {
   let similarMovies = movies.filter(
-    (m) => movie.genre === m.genre && m.id !== movie.id
+    (m) => m.id === movie.id || !movie.Genres.includes(m.Genres[0])
   );
+
+  console.log(similarMovies);
 
   return (
     <>

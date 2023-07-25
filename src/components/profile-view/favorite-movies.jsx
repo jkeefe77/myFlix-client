@@ -3,7 +3,7 @@ import { Row, Col } from "react-bootstrap";
 
 export const FavoriteMovies = ({ movies, user }) => {
   let favoriteMovies = movies.filter((movie) =>
-    user.FavoriteMovies.includes(movie.id)
+    user.FavoriteMovies.includes(movie._id)
   );
 
   return (
