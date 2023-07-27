@@ -12,7 +12,8 @@ export const ProfileView = ({
   onLoggedOut,
 }) => {
   const deleteAccount = () => {
-    fetch(`${process.env.API_URL}/users/${user._id}`, {
+    console.log(user);
+    fetch(`${process.env.API_URL}/users/${user.Username}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -33,7 +34,12 @@ export const ProfileView = ({
     <>
       <Col xxl={4} xl={5} lg={6} md={12} xs={12} className="px-4 text-primary">
         <UserInfo user={user} />
-        <UserEdit updateUser={updateUser} onLoggedOut={onLoggedOut} />
+        <UserEdit
+          user={user}
+          token={token}
+          updateUser={updateUser}
+          onLoggedOut={onLoggedOut}
+        />
         <Link
           className="link-danger text-decoration-none w-100 text-end fs-6"
           variant="link-danger"

@@ -22,7 +22,7 @@ export const UserEdit = ({ user, token, updateUser, onLoggedOut }) => {
       ? (data.Birthday = birthday)
       : alert("Nothing to change!");
 
-    fetch(`${process.env.API_URL}/users/${user._id}`, {
+    fetch(`${process.env.API_URL}/users/${user.Username}`, {
       method: "PUT",
       body: JSON.stringify(data),
       headers: {
