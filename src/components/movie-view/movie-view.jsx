@@ -19,7 +19,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
   }, [movieId]);
 
   const addFavorite = () => {
-    fetch(`${process.env.API_URL}/users/${user.Username}/movies/${movieId}`, {
+    fetch(`${process.env.API_URL}users/${user.Username}/movies/${movieId}`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -44,7 +44,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
   };
 
   const removeFavorite = () => {
-    fetch(`${process.env.API_URL}/users/${user.Username}/movies/${movieId}`, {
+    fetch(`${process.env.API_URL}users/${user.Username}/movies/${movieId}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     })
