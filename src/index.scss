@@ -1,33 +1,54 @@
-
-
-$body-bg: #b69e89;
+$body-bg: #a7d5f2;
 
 .card-body {
-  background-color: #c9e5e2;
-} 
-.border-light{
+  background-color: #1d2f40;
+}
+.border-light {
   padding-bottom: 1.5rem;
-  border: none !important;
+  background-color: #55a6d9;
+  border: none;
 }
 .justify-content-md-center {
   gap: 10%;
 }
 a {
-  color:#1d968a !important;
-}
-.border-secondary {
-  border: red;
-}
-.navbar-light{
-  font-size: 30px;
-  color:#1d968a !important;
-}
-.navbar-brand{
-  font-size:36px !important;
-  margin-left:10%;
-  padding-right:10% !important;
-  color:#1d968a !important;
-  font-weight: bold;
+  color: #1d2f40;
 }
 
+.navbar-light {
+  font-size: 30px;
+  color: #1d2f40;
+}
+.navbar-brand {
+  font-family: "Bungee Spice";
+  margin-left: 10%;
+  padding-right: 10%;
+  text-decoration: none;
+}
+
+.fs-1 {
+  font-size: 200px;
+}
+
+.navbar-top {
+  color: yellow;
+}
+
+.text-center {
+  color: white;
+  font-family: "Roboto";
+}
+
+.movie-description {
+  color: white;
+  font-weight: 30rm;
+  text-shadow: 2rm;
+}
+
+.movie-card-data {
+  color: red;
+}
+.fw-bold {
+  font-family: "Playfair Display";
+}
 @import "~bootstrap/scss/bootstrap.scss";

@@ -71,7 +71,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
   return (
     <>
       <Col className="mb-4">
-        <div>
+        <div class="movie-card-data">
           <img className="w-100 border-secondary mb-3" src={movie.imagePath} />
         </div>
         <div>

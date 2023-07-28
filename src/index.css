@@ -1,11 +1,12 @@
 @charset "UTF-8";
 .card-body {
-  background-color: #c9e5e2;
+  background-color: #1d2f40;
 }
 
 .border-light {
   padding-bottom: 1.5rem;
-  border: none !important;
+  background-color: #55a6d9;
+  border: none;
 }
 
 .justify-content-md-center {
@@ -13,24 +14,46 @@
 }
 
 a {
-  color: #1d968a !important;
-}
-
-.border-secondary {
-  border: red;
+  color: #1d2f40;
 }
 
 .navbar-light {
   font-size: 30px;
-  color: #1d968a !important;
+  color: #1d2f40;
 }
 
 .navbar-brand {
-  font-size: 36px !important;
+  font-family: "Bungee Spice";
   margin-left: 10%;
-  padding-right: 10% !important;
-  color: #1d968a !important;
-  font-weight: bold;
+  padding-right: 10%;
+  text-decoration: none;
+}
+
+.fs-1 {
+  font-size: 200px;
+}
+
+.navbar-top {
+  color: yellow;
+}
+
+.text-center {
+  color: white;
+  font-family: "Roboto";
+}
+
+.movie-description {
+  color: white;
+  font-weight: 30rm;
+  text-shadow: 2rm;
+}
+
+.movie-card-data {
+  color: red;
+}
+
+.fw-bold {
+  font-family: "Playfair Display";
 }
 
 /*!
@@ -114,8 +137,8 @@ a {
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-color-rgb: 33, 37, 41;
-  --bs-body-bg: #b69e89;
-  --bs-body-bg-rgb: 182, 158, 137;
+  --bs-body-bg: #a7d5f2;
+  --bs-body-bg-rgb: 167, 213, 242;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
   --bs-secondary-color: rgba(33, 37, 41, 0.75);
@@ -2500,10 +2523,10 @@ textarea.form-control-lg {
   outline: 0;
 }
 .form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #b69e89, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 1px #a7d5f2, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #b69e89, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 1px #a7d5f2, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .form-range::-moz-focus-outer {
   border: 0;

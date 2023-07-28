@@ -7,12 +7,14 @@ export const MovieCard = ({ movie }) => {
   console.log("movie ", movie);
   return (
     <Link className="text-decoration-none" to={`/movies/${movie._id}`}>
-      <Card className="h-100" border="light">
+      <Card className="h-100" border="dark">
         <Card.Img variant="top" src={movie.imagePath} className="border" />
-        <Card.Body className="text-center">
+        <div className="movie-description">
+          <Card.Body className="text-center">
           <Card.Title className="fw-bold">{movie.Title}</Card.Title>
           <Card.Text className="fs-6">{movie.Genres}</Card.Text>
         </Card.Body>
+        </div>
       </Card>
     </Link>
   );
