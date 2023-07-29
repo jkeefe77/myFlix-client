@@ -1,10 +1,54 @@
-$color: steelblue;
+$body-bg: #a7d5f2;
 
-.my-flix {
-  color: $color;
+.card-body {
+  background-color: #1d2f40;
+}
+.border-light {
+  padding-bottom: 1.5rem;
+  background-color: #55a6d9;
+  border: none;
+}
+.justify-content-md-center {
+  gap: 10%;
+}
+a {
+  color: #1d2f40;
 }
 
-$primary: #F25757;
-$body-bg: #F2F2F2;
+.navbar-light {
+  font-size: 30px;
+  color: #1d2f40;
+}
+.navbar-brand {
+  font-family: "Bungee Spice";
+  margin-left: 10%;
+  padding-right: 10%;
+  text-decoration: none;
+}
 
+.fs-1 {
+  font-size: 200px;
+}
+
+.navbar-top {
+  color: yellow;
+}
+
+.text-center {
+  color: white;
+  font-family: "Roboto";
+}
+
+.movie-description {
+  color: white;
+  font-weight: 30rm;
+  text-shadow: 2rm;
+}
+
+.movie-card-data {
+  color: red;
+}
+.fw-bold {
+  font-family: "Playfair Display";
+}
 @import "~bootstrap/scss/bootstrap.scss";
