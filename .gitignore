@@ -12,3 +12,4 @@ dist
 .parcel-cache/lock.mdb
 dist/index.b4b6dfad.js
 dist/index.b4b6dfad.js.map
+.parcel-cache/data.mdb
