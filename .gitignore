@@ -1,11 +1,15 @@
 node_modules
 .cache
-myFlix-client/.parcel-cache/
-myFlix-client/dist
+.parcel-cache
+dist
+.env
 
 
 
 
 
-
-
+.parcel-cache/data.mdb
+.parcel-cache/lock.mdb
+dist/index.b4b6dfad.js
+dist/index.b4b6dfad.js.map
+.parcel-cache/data.mdb
