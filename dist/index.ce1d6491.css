@@ -1,56 +1,3 @@
-.card-body {
-  background-color: #1d2f40;
-}
-
-.border-light {
-  background-color: #55a6d9;
-  border: none;
-  padding-bottom: 1.5rem;
-}
-
-.justify-content-md-center {
-  gap: 10%;
-}
-
-a {
-  color: #1d2f40;
-}
-
-.navbar-light {
-  color: #1d2f40;
-  font-size: 30px;
-}
-
-.navbar-brand {
-  margin-left: 10%;
-  padding-right: 10%;
-  font-family: Bungee Spice;
-  text-decoration: none;
-}
-
-.navbar-top {
-  color: #ff0;
-}
-
-.text-center {
-  color: #fff;
-  font-family: Roboto;
-}
-
-.movie-description {
-  color: #fff;
-  font-weight: 30rm;
-  text-shadow: 2rm;
-}
-
-.movie-card-data {
-  color: red;
-}
-
-.fw-bold {
-  font-family: Playfair Display;
-}
-
 :root, [data-bs-theme="light"] {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -13236,6 +13183,116 @@ textarea.form-control-lg {
 
   .d-print-none {
     display: none !important;
+  }
+}
+
+.card-body {
+  background-color: #1d2f40;
+}
+
+.border-light {
+  background-color: #1d2f40;
+  border: none;
+  padding-bottom: 1.5rem;
+}
+
+.justify-content-md-center {
+  gap: 10%;
+}
+
+a {
+  color: #1d2f40;
+}
+
+.navbar-light {
+  color: #1d2f40;
+  font-size: 30px;
+}
+
+a.navbar-brand {
+  margin-left: 10%;
+  font-family: Bungee Spice;
+  font-size: 200%;
+  text-decoration: none;
+}
+
+.text-center {
+  color: #fff;
+  font-family: Roboto;
+}
+
+.movie-description {
+  color: #fff;
+  font-weight: 30rm;
+  text-shadow: 2rm;
+}
+
+.fw-bold {
+  color: #1d2f40;
+  text-align: right;
+  font-family: Playfair Display;
+  font-size: 2rem;
+}
+
+.movie-description {
+  font-size: 200px;
+}
+
+.navbar-collapse {
+  display: right;
+}
+
+a.ms-lg-auto.nav-link {
+  font-style: bold;
+}
+
+.userinfo {
+  color: gray;
+  font-size: 30px;
+}
+
+.form-label {
+  color: #1d2f40;
+}
+
+.form-control {
+  background-color: #fff;
+}
+
+.fs-3 {
+  color: #1d2f40;
+  font-family: Playfair Display;
+}
+
+.user-info-container {
+  justify-content: flex-end;
+  display: flex;
+}
+
+.user-info-details {
+  width: 50%;
+  margin-right: 20px;
+}
+
+.mydetails {
+  color: #1d2f40;
+  font-family: Playfair Display;
+  font-weight: 40rem;
+  font-style: bold;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.favorite-movies-row {
+  background-color: #b4bfa3;
+  padding: 20px;
+}
+
+@media (width <= 767px) {
+  .col-lg-6 {
+    margin-top: 20px;
   }
 }
 

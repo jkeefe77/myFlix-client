@@ -6,11 +6,12 @@ export const LoginView = ({ onLoggedIn }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    
     const data = {
       Username: username,
       Password: password,
     };
+    
 
     fetch("https://filmsonthefly-app-ca635d09fe99.herokuapp.com/login", {
       method: "POST",

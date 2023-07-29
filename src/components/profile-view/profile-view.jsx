@@ -1,8 +1,9 @@
 import { UserInfo } from "./user-info";
-import { Col, Container } from "react-bootstrap";
+import { Col, Container, Button } from "react-bootstrap";
 import { UserEdit } from "./user-edit";
 import { Link } from "react-router-dom";
 import { FavoriteMovies } from "./favorite-movies";
+
 
 export const ProfileView = ({
   user,
@@ -43,24 +44,22 @@ export const ProfileView = ({
           updateUser={updateUser}
           onLoggedOut={onLoggedOut}
         />
-        <Link
-          className="link-danger text-decoration-none w-100 text-end fs-6"
-          variant="link-danger"
-          type="submit"
-          onClick={() => {
-            if (
-              confirm(
+        <Button variant="danger"
+        onClick={() => {
+             if (
+              window.confirm(
                 "Are you sure you want to remove your account from our site?"
               )
             ) {
               deleteAccount();
             }
           }}
+          className="w-100 mt-3"
         >
-          Remove account permanently
-        </Link>
+          Deactivate Account
+        </Button>
       </Col>
-      <Container className="bg-light mb-4 px-4 rounded-4">
+      <Container className="bg-dark mb-4 px-4 rounded-4">
         <FavoriteMovies movies={movies} user={user} />
       </Container>
     </>

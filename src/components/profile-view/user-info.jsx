@@ -2,22 +2,26 @@ import React from "react";
 
 export const UserInfo = ({ user }) => {
   return (
-    <>
-      <h2 className="fs-3">User details</h2>
-      <div className="px-4 pb-4 pt-2">
-        <div>
-          <span className="fw-bold">Username: </span>
-          <span>{user.Username}</span>
-        </div>
-        <div>
-          <span className="fw-bold">Email: </span>
-          <span>{user.Email}</span>
-        </div>
-        <div>
-          <span className="fw-bold">Birthdate: </span>
-          <span>{user.Birthday.slice(0, 10)}</span>
-        </div>
+    <div className="user-info-container">
+      <div className="user-info-details">
+        <h2 className="mydetails">Account Information</h2>
+        <table className="userdetails">
+          <tbody>
+            <tr>
+              <td className="fw-bold">Username:</td>
+              <td>{user.Username}</td>
+            </tr>
+            <tr>
+              <td className="fw-bold">Email:</td>
+              <td>{user.Email}</td>
+            </tr>
+            <tr>
+              <td className="fw-bold">Birthdate:</td>
+              <td>{user.Birthday.slice(0, 10)}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </>
+    </div>
   );
 };

@@ -44,6 +44,9 @@ export const UserEdit = ({ user, token, updateUser, onLoggedOut }) => {
 
   return (
     <>
+    
+    <container>
+      <div class="userinfo">
       <h2 className="fs-3">Update your profile</h2>
       <Form className=" pt-3" onSubmit={handleSubmit}>
         <Form.Group controlId="formUsername">
@@ -83,12 +86,16 @@ export const UserEdit = ({ user, token, updateUser, onLoggedOut }) => {
             value={birthday}
             onChange={(e) => setBirthday(e.target.value)}
           />
+          
         </Form.Group>
 
-        <Button className="mt-3 w-25" variant="primary" type="submit">
-          Submit
+        <Button className="mt-4 w-25" variant="warning" type="submit">
+          Update 
         </Button>
+        
       </Form>
+      </div>
+      </container>
     </>
   );
 };

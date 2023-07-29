@@ -1,13 +1,16 @@
 $body-bg: #a7d5f2;
 
+@import "~bootstrap/scss/bootstrap.scss";
+
 .card-body {
   background-color: #1d2f40;
 }
 .border-light {
   padding-bottom: 1.5rem;
-  background-color: #55a6d9;
+  background-color: #1d2f40;
   border: none;
 }
+
 .justify-content-md-center {
   gap: 10%;
 }
@@ -19,19 +22,11 @@ a {
   font-size: 30px;
   color: #1d2f40;
 }
-.navbar-brand {
+a.navbar-brand {
   font-family: "Bungee Spice";
+  font-size: 200%;
   margin-left: 10%;
-  padding-right: 10%;
   text-decoration: none;
-}
-
-.fs-1 {
-  font-size: 200px;
-}
-
-.navbar-top {
-  color: yellow;
 }
 
 .text-center {
@@ -45,10 +40,78 @@ a {
   text-shadow: 2rm;
 }
 
-.movie-card-data {
-  color: red;
-}
 .fw-bold {
   font-family: "Playfair Display";
+  font-size: 2rem;
+  color: #1d2f40;
+  text-align: right;
 }
-@import "~bootstrap/scss/bootstrap.scss";
+
+.movie-description {
+  font-size: 200px;
+}
+
+.navbar-collapse {
+  display: right;
+}
+
+a.ms-lg-auto.nav-link {
+  font-style: bold;
+}
+
+.userinfo {
+  color: gray;
+  font-size: 30px;
+}
+
+
+
+
+.form-label {
+  color: #1D2F40;
+}
+
+.form-control {
+  background-color: white;
+}
+
+.fs-3 {
+  color: #1D2F40;
+  font-family: "Playfair Display";
+  
+}
+
+.user-info-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user-info-details {
+  width: 50%;
+  margin-right: 20px;
+}
+.mydetails {
+  color: #1d2f40;
+  font-family: "Playfair Display";
+  font-weight: 40rem;
+  font-style: bold;
+  
+}
+.table {
+  margin-top: 20px;
+}
+
+.favorite-movies-row {
+  background-color: #B4BFA3;
+  padding: 20px;
+}
+
+
+/* Adjust the breakpoints to your needs */
+@media (max-width: 767px) {
+  .col-lg-6 {
+    margin-top: 20px;
+  }
+}
+
+

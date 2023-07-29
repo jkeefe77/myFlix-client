@@ -12,7 +12,7 @@ export const MovieCard = ({ movie }) => {
         <div className="movie-description">
           <Card.Body className="text-center">
           <Card.Title className="fw-bold">{movie.Title}</Card.Title>
-          <Card.Text className="fs-6">{movie.Genres}</Card.Text>
+          <Card.Text className="fs-5">{movie.Genres}</Card.Text>
         </Card.Body>
         </div>
       </Card>

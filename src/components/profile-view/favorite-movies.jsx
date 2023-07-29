@@ -8,8 +8,8 @@ export const FavoriteMovies = ({ movies, user }) => {
 
   return (
     <>
-      <h3 className="mt-4 pt-4 mb-3 text-primary">Your favorite movies:</h3>
-      <Row>
+      <h3 className="mt-4 pt-4 mb-3 text-light">Your favorite movies:</h3>
+      <Row className="favorite-movies-row">
         {favoriteMovies.map((movie) => (
           <Col
             className="mb-4 mx-auto"
