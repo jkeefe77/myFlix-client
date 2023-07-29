@@ -13,10 +13,13 @@ export const ProfileView = ({
 }) => {
   const deleteAccount = () => {
     console.log(user);
-    fetch(`${process.env.API_URL}/users/${user.Username}`, {
-      method: "DELETE",
-      headers: { Authorization: `Bearer ${token}` },
-    })
+    fetch(
+      `https://filmsonthefly-app-ca635d09fe99.herokuapp.com/users/${user.Username}`,
+      {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    )
       .then((response) => {
         if (response.ok) {
           alert("Your account has been deleted. Good Bye!");

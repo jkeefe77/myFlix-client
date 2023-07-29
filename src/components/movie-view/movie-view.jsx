@@ -19,10 +19,13 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
   }, [movieId]);
 
   const addFavorite = () => {
-    fetch(`${process.env.API_URL}/users/${user.Username}/movies/${movieId}`, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${token}` },
-    })
+    fetch(
+      `https://filmsonthefly-app-ca635d09fe99.herokuapp.com/users/${user.Username}/movies/${movie._id}`,
+      {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    )
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -44,10 +47,13 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
   };
 
   const removeFavorite = () => {
-    fetch(`${process.env.API_URL}/users/${user.Username}/movies/${movieId}`, {
-      method: "DELETE",
-      headers: { Authorization: `Bearer ${token}` },
-    })
+    fetch(
+      `https://filmsonthefly-app-ca635d09fe99.herokuapp.com/users/${user.Username}/movies/${movieId}`,
+      {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    )
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -71,7 +77,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
   return (
     <>
       <Col className="mb-4">
-        <div class="movie-card-data">
+        <div className="movie-card-data">
           <img className="w-100 border-secondary mb-3" src={movie.imagePath} />
         </div>
         <div>

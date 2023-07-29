@@ -12,24 +12,26 @@ export const UserEdit = ({ user, token, updateUser, onLoggedOut }) => {
 
     const data = {};
 
-    username !== ""
-      ? (data.Username = username)
-      : email !== ""
-      ? (data.Email = email)
-      : password !== ""
-      ? (data.Password = password)
-      : birthday !== ""
-      ? (data.Birthday = birthday)
-      : alert("Nothing to change!");
+    username ? (data.Username = username) : "";
+    email ? (data.Email = email) : "";
+    password ? (data.Password = password) : "";
+    birthday ? (data.Birthday = birthday) : "";
 
-    fetch(`${process.env.API_URL}/users/${user.Username}`, {
-      method: "PUT",
-      body: JSON.stringify(data),
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-    }).then((response) => {
+    console.log("user ", user);
+    console.log("token", token);
+    console.log("data ", data);
+
+    fetch(
+      `https://filmsonthefly-app-ca635d09fe99.herokuapp.com/users/${user.Username}`,
+      {
+        method: "PUT",
+        body: JSON.stringify(data),
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((response) => {
       if (response.ok) {
         alert("Your data was updated!");
         onLoggedOut();

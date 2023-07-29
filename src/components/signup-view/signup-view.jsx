@@ -26,7 +26,7 @@ export const SignupView = () => {
       Birthday: birthday,
     };
 
-    fetch(`${process.env.API_URL}/users`, {
+    fetch("https://filmsonthefly-app-ca635d09fe99.herokuapp.com/users", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
