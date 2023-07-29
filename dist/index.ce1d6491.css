@@ -13290,6 +13290,14 @@ a.ms-lg-auto.nav-link {
   padding: 20px;
 }
 
+.contact-form-container {
+  text-indent: 20px;
+  font-size: 30px;
+  font-style: bold;
+  padding: 30px;
+  font-family: sans-serif;
+}
+
 @media (width <= 767px) {
   .col-lg-6 {
     margin-top: 20px;

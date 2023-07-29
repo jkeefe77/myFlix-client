@@ -64,11 +64,8 @@ a.ms-lg-auto.nav-link {
   font-size: 30px;
 }
 
-
-
-
 .form-label {
-  color: #1D2F40;
+  color: #1d2f40;
 }
 
 .form-control {
@@ -76,9 +73,8 @@ a.ms-lg-auto.nav-link {
 }
 
 .fs-3 {
-  color: #1D2F40;
+  color: #1d2f40;
   font-family: "Playfair Display";
-  
 }
 
 .user-info-container {
@@ -95,17 +91,23 @@ a.ms-lg-auto.nav-link {
   font-family: "Playfair Display";
   font-weight: 40rem;
   font-style: bold;
-  
 }
 .table {
   margin-top: 20px;
 }
 
 .favorite-movies-row {
-  background-color: #B4BFA3;
+  background-color: #b4bfa3;
   padding: 20px;
 }
 
+.contact-form-container {
+  font-size: 30px;
+  text-indent: 20px;
+  font-style: bold;
+  font-family: sans-serif;
+  padding: 30px;
+}
 
 /* Adjust the breakpoints to your needs */
 @media (max-width: 767px) {
@@ -113,5 +115,3 @@ a.ms-lg-auto.nav-link {
     margin-top: 20px;
   }
 }
-
-
