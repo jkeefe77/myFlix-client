@@ -45,7 +45,7 @@ export const SignupView = () => {
   };
 
   return (
-    <Container>
+    <Container className="signupform">
       <Row>
         <Col>
           <CardGroup>
@@ -100,6 +100,7 @@ export const SignupView = () => {
                             required
                           />
                         </Form.Group>
+                        <br></br>
                         <Button
                           variant="primary"
                           type="submit"

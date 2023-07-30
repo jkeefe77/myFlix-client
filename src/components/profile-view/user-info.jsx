@@ -2,10 +2,10 @@ import React from "react";
 
 export const UserInfo = ({ user }) => {
   return (
-    <div className="contact-form-container-fluid" style={{backgroundColor:"#B4BFA3" }}>
+    <div className="contact-form-container" style={{backgroundColor:"#1D2F40" }}>
     <div className="user-info-container">
       <div className="user-info-details">
-       <h2 className="mydetails">Account Information</h2>
+       <h2 className="mydetails">Welcome Back!</h2>
       <table className="userdetails">
         <tbody>
           <tr>

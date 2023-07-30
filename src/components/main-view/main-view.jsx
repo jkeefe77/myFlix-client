@@ -48,8 +48,8 @@ export const MainView = () => {
 
   return (
     <BrowserRouter>
-      <Row className="justify-content-md-center">
-        <Col className="mb-4 .bg-warning">
+      <Row className="bg-light p-3 rounded-3 mb-5 w-100">
+        <Col className="mb-10 .bg-warning">
           <NavigationBar
             user={user}
             onLoggedOut={() => {
@@ -124,7 +124,15 @@ export const MainView = () => {
                 ) : (
                   <>
                     {movies.map((movie) => (
-                      <Col key={movie._id} xxl={4} xl={6} lg={12} md={12} xs={12}>
+                      <Col
+                        className="mb-4 mx-auto justify-content-center"
+                        key={movie._id}
+                        xxl={2}
+                        xl={2}
+                        lg={2}
+                        md={8}
+                        xs={12}
+                      >
                         <MovieCard movie={movie} />
                       </Col>
                     ))}

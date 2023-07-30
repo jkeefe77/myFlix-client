@@ -44,6 +44,7 @@ export const ProfileView = ({
           updateUser={updateUser}
           onLoggedOut={onLoggedOut}
         />
+        <br></br>
         <Button variant="danger"
         onClick={() => {
              if (
@@ -59,6 +60,8 @@ export const ProfileView = ({
           Deactivate Account
         </Button>
       </Col>
+      <br></br>
+      <br></br>
       <Container className="bg-dark mb-4 px-4 rounded-4">
         <FavoriteMovies movies={movies} user={user} />
       </Container>

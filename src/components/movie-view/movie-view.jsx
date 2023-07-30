@@ -78,24 +78,25 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
     <>
       <Col className="mb-4">
         <div className="movie-card-data">
-          <img className="w-100 border-secondary mb-3" src={movie.imagePath} />
+          <img className="w-75 border-secondary mb-3" src={movie.imagePath} />
         </div>
         <div>
           <span className="fw-bold">Title: </span>
-          <span>{movie.Title}</span>
+          <span className="moviefont">{movie.Title}</span>
         </div>
         <div>
           <span className="fw-bold">Genre: </span>
-          <span>{movie.Genres}</span>
+          <span className="moviefont">{movie.Genres}</span>
         </div>
         <div>
           <span className="fw-bold">Director: </span>
-          <span>{movie.director}</span>
+          <span className="moviefont">{movie.director}</span>
         </div>
-        <div className="mb-3">
+        <div className="moviefont">
           <span className="fw-bold">Description: </span>
           <span>{movie.Description}</span>
         </div>
+        <br></br>
         <Link to={`/`}>
           <Button variant="dark">Back</Button>
         </Link>
@@ -104,7 +105,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
             Remove from favorites
           </Button>
         ) : (
-          <Button variant="warning" className="ms-2" onClick={addFavorite}>
+          <Button variant="success" className="ms-2" onClick={addFavorite}>
             Add to favorites
           </Button>
         )}

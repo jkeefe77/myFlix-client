@@ -13190,10 +13190,17 @@ textarea.form-control-lg {
   background-color: #1d2f40;
 }
 
+.card-title {
+  color: #fff;
+}
+
+.signupform {
+  width: 500px;
+}
+
 .border-light {
   background-color: #1d2f40;
   border: none;
-  padding-bottom: 1.5rem;
 }
 
 .justify-content-md-center {
@@ -13221,6 +13228,10 @@ a.navbar-brand {
   font-family: Roboto;
 }
 
+.p.fs-5.card-text {
+  position: center;
+}
+
 .movie-description {
   color: #fff;
   font-weight: 30rm;
@@ -13228,14 +13239,10 @@ a.navbar-brand {
 }
 
 .fw-bold {
-  color: #1d2f40;
-  text-align: right;
+  color: #fff;
+  text-align: center;
   font-family: Playfair Display;
-  font-size: 2rem;
-}
-
-.movie-description {
-  font-size: 200px;
+  font-size: 20px;
 }
 
 .navbar-collapse {
@@ -13248,7 +13255,7 @@ a.ms-lg-auto.nav-link {
 
 .userinfo {
   color: gray;
-  font-size: 30px;
+  font-size: 10px;
 }
 
 .form-label {
@@ -13256,6 +13263,7 @@ a.ms-lg-auto.nav-link {
 }
 
 .form-control {
+  cursor: pointer;
   background-color: #fff;
 }
 
@@ -13265,20 +13273,36 @@ a.ms-lg-auto.nav-link {
 }
 
 .user-info-container {
+  flex: right;
   justify-content: flex-end;
-  display: flex;
+}
+
+p {
+  margin-top: 5%;
+}
+
+.pt-3 {
+  font-size: 20px;
+}
+
+.fs-5 {
+  margin-bottom: 10px;
 }
 
 .user-info-details {
   width: 50%;
   margin-right: 20px;
+  font-family: Handjet;
+  font-size: 30px;
 }
 
 .mydetails {
-  color: #1d2f40;
+  color: #fff;
   font-family: Playfair Display;
   font-weight: 40rem;
   font-style: bold;
+  white-space: nowrap;
+  text-align: center;
 }
 
 .table {
@@ -13286,16 +13310,46 @@ a.ms-lg-auto.nav-link {
 }
 
 .favorite-movies-row {
-  background-color: #b4bfa3;
-  padding: 20px;
+  background-color: #1d2f40;
+  padding-top: 20px;
 }
 
 .contact-form-container {
-  text-indent: 20px;
+  resize: none;
+  border: 1px solid #1d2f40;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 10px;
+}
+
+.moviefont {
+  font-size: 20px;
+}
+
+label {
+  width: 100%;
+  font-family: Handjet;
   font-size: 30px;
-  font-style: bold;
-  padding: 30px;
-  font-family: sans-serif;
+}
+
+.d-grid.gap-2.col-6.mx-auto {
+  float: left;
+  color: #fff;
+  background-color: #1d2f40;
+  border-radius: 20px;
+  margin-top: 20%;
+  display: block;
+}
+
+input {
+  vertical-align: middle;
+  border-radius: 20px;
+  font-size: 25px;
+}
+
+.card {
+  background-color: #1d2f40;
 }
 
 @media (width <= 767px) {

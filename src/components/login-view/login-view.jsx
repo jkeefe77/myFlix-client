@@ -6,7 +6,7 @@ export const LoginView = ({ onLoggedIn }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
+
     const data = {
       Username: username,
       Password: password,
@@ -51,7 +51,9 @@ export const LoginView = ({ onLoggedIn }) => {
           required
         />
       </label>
+      
       <label>
+        <br></br>
         Password:
         <input
           type="password"
@@ -59,8 +61,9 @@ export const LoginView = ({ onLoggedIn }) => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </label>
-      <button type="submit">Submit</button>
+        </label>
+        
+      <button type="submit" className="d-grid gap-2 col-6 mx-auto">Login</button>
     </form>
   );
 };

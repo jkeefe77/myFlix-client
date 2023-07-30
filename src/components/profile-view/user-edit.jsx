@@ -47,6 +47,7 @@ export const UserEdit = ({ user, token, updateUser, onLoggedOut }) => {
     
     <container>
       <div class="userinfo">
+        <br></br>
       <h2 className="fs-3">Update your profile</h2>
       <Form className=" pt-3" onSubmit={handleSubmit}>
         <Form.Group controlId="formUsername">
@@ -89,7 +90,7 @@ export const UserEdit = ({ user, token, updateUser, onLoggedOut }) => {
           
         </Form.Group>
 
-        <Button className="mt-4 w-25" variant="warning" type="submit">
+        <Button className="mt-4 w-25" variant="secondary" type="submit">
           Update 
         </Button>
         

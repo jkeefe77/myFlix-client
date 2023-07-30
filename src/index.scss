@@ -5,8 +5,16 @@ $body-bg: #a7d5f2;
 .card-body {
   background-color: #1d2f40;
 }
+
+.card-title {
+  color: white;
+}
+
+.signupform {
+  width: 500px;
+}
+
 .border-light {
-  padding-bottom: 1.5rem;
   background-color: #1d2f40;
   border: none;
 }
@@ -34,6 +42,9 @@ a.navbar-brand {
   font-family: "Roboto";
 }
 
+.p.fs-5.card-text {
+  position: center;
+}
 .movie-description {
   color: white;
   font-weight: 30rm;
@@ -42,13 +53,9 @@ a.navbar-brand {
 
 .fw-bold {
   font-family: "Playfair Display";
-  font-size: 2rem;
-  color: #1d2f40;
-  text-align: right;
-}
-
-.movie-description {
-  font-size: 200px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
 }
 
 .navbar-collapse {
@@ -61,7 +68,7 @@ a.ms-lg-auto.nav-link {
 
 .userinfo {
   color: gray;
-  font-size: 30px;
+  font-size: 10px;
 }
 
 .form-label {
@@ -70,6 +77,7 @@ a.ms-lg-auto.nav-link {
 
 .form-control {
   background-color: white;
+  cursor: pointer;
 }
 
 .fs-3 {
@@ -78,35 +86,81 @@ a.ms-lg-auto.nav-link {
 }
 
 .user-info-container {
-  display: flex;
+  flex: right;
   justify-content: flex-end;
+}
+
+p {
+  margin-top: 5%;
+}
+
+.pt-3 {
+  font-size: 20px;
+}
+
+.fs-5 {
+  margin-bottom: 10px;
 }
 
 .user-info-details {
   width: 50%;
   margin-right: 20px;
+  font-family: "Handjet";
+  font-size: 30px;
 }
 .mydetails {
-  color: #1d2f40;
+  color: white;
   font-family: "Playfair Display";
   font-weight: 40rem;
   font-style: bold;
+  white-space: nowrap;
+  text-align: center;
 }
 .table {
   margin-top: 20px;
 }
 
 .favorite-movies-row {
-  background-color: #b4bfa3;
-  padding: 20px;
+  background-color: #1d2f40;
+  padding-top: 20px;
 }
 
 .contact-form-container {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #1d2f40;
+  border-radius: 4px;
+  resize: none;
+}
+
+.moviefont {
+  font-size: 20px;
+}
+
+label {
+  font-family: "Handjet";
   font-size: 30px;
-  text-indent: 20px;
-  font-style: bold;
-  font-family: sans-serif;
-  padding: 30px;
+  width: 100%;
+}
+
+.d-grid.gap-2.col-6.mx-auto {
+  display: block;
+  float: left;
+  margin-top: 20%;
+  background-color: #1d2f40;
+  color: white;
+  border-radius: 20px;
+}
+
+input {
+  border-radius: 20px;
+  font-size: 25px;
+  vertical-align: middle;
+}
+
+.card {
+  background-color: #1d2f40;
 }
 
 /* Adjust the breakpoints to your needs */
