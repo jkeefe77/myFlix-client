@@ -2,6 +2,12 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const NavigationBar = ({ user, onLoggedOut }) => {
+  const handleLogout = () => {
+    const confirmLogout = window.confirm("are you sure you want to log off?");
+    if (confirmLogout) {
+      onLoggedOut();
+    }
+  };
   return (
     <Navbar bg="light" className="rounded-3" expand="lg">
       <Container>
@@ -33,7 +39,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                 <Nav.Link className="link-header-dark" as={Link} to="/profile">
                   Profile
                 </Nav.Link>
-                <Nav.Link onClick={onLoggedOut} className="ms-lg-auto">
+                <Nav.Link onClick={handleLogout} className="ms-lg-auto">
                   Logout
                 </Nav.Link>
               </>
