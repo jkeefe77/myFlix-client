@@ -1,7 +1,8 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Form from "react-bootstrap/Form";
 
-export const NavigationBar = ({ user, onLoggedOut }) => {
+export const NavigationBar = ({ user, onLoggedOut, handleSearchInput }) => {
   const handleLogout = () => {
     const confirmLogout = window.confirm("are you sure you want to log off?");
     if (confirmLogout) {
@@ -42,6 +43,14 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                 <Nav.Link onClick={handleLogout} className="ms-lg-auto">
                   Logout
                 </Nav.Link>
+                <Form>
+                  <Form.Control
+                    id="search-bar"
+                    type="text"
+                    placeholder="Search by title"
+                    onChange={handleSearchInput}
+                  />
+                </Form>
               </>
             )}
           </Nav>

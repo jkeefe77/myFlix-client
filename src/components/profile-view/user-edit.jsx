@@ -44,58 +44,55 @@ export const UserEdit = ({ user, token, updateUser, onLoggedOut }) => {
 
   return (
     <>
-    
-    <container>
-      <div class="userinfo">
-        <br></br>
-      <h2 className="fs-3">Update your profile</h2>
-      <Form className=" pt-3" onSubmit={handleSubmit}>
-        <Form.Group controlId="formUsername">
-          <Form.Label>Username:</Form.Label>
-          <Form.Control
-            type="text"
-            autoComplete="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            minLength="5"
-          />
-        </Form.Group>
+      <container>
+        <div class="userinfo">
+          <br></br>
+          <h2 className="fs-3">Update your profile</h2>
+          <Form className=" pt-3" onSubmit={handleSubmit}>
+            <Form.Group controlId="formUsername">
+              <Form.Label>Username:</Form.Label>
+              <Form.Control
+                type="text"
+                autoComplete="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                minLength="5"
+              />
+            </Form.Group>
 
-        <Form.Group controlId="formPassword">
-          <Form.Label className="pt-2">Password:</Form.Label>
-          <Form.Control
-            type="password"
-            autoComplete="new-password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
+            <Form.Group controlId="formPassword">
+              <Form.Label className="pt-2">Password:</Form.Label>
+              <Form.Control
+                type="password"
+                autoComplete="new-password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
 
-        <Form.Group controlId="formEmail">
-          <Form.Label className="pt-2">Email:</Form.Label>
-          <Form.Control
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
+            <Form.Group controlId="formEmail">
+              <Form.Label className="pt-2">Email:</Form.Label>
+              <Form.Control
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
 
-        <Form.Group controlId="formBirthday">
-          <Form.Label className="pt-2">Birthday:</Form.Label>
-          <Form.Control
-            type="date"
-            value={birthday}
-            onChange={(e) => setBirthday(e.target.value)}
-          />
-          
-        </Form.Group>
+            <Form.Group controlId="formBirthday">
+              <Form.Label className="pt-2">Birthday:</Form.Label>
+              <Form.Control
+                type="date"
+                value={birthday}
+                onChange={(e) => setBirthday(e.target.value)}
+              />
+            </Form.Group>
 
-        <Button className="mt-4 w-25" variant="secondary" type="submit">
-          Update 
-        </Button>
-        
-      </Form>
-      </div>
+            <Button className="mt-4 w-25" variant="secondary" type="submit">
+              Update
+            </Button>
+          </Form>
+        </div>
       </container>
     </>
   );
