@@ -17,7 +17,7 @@ export const MainView = () => {
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [movies, setMovies] = useState([]);
-  const [filter, setFilter] = useState("");
+  const [filteredMovies, setFilteredMovies] = useState([]);
 
   const updateUser = (user) => {
     setUser(user);
@@ -47,6 +47,18 @@ export const MainView = () => {
       });
   }, [token]);
 
+  useEffect(() => {
+    setFilteredMovies(movies);
+  }, [movies]);
+
+  const handleSearchInput = (e) => {
+    const searchWord = e.target.value.toLowerCase();
+    let tempArray = movies.filter((movie) =>
+      movie.Title.toLowerCase().includes(searchWord)
+    );
+    setFilteredMovies(tempArray);
+  };
+
   return (
     <BrowserRouter>
       <Row className="bg-light p-3 rounded-3 mb-5 w-100">
@@ -59,6 +71,7 @@ export const MainView = () => {
               localStorage.clear();
               window.location.reload();
             }}
+            handleSearchInput={handleSearchInput}
           />
         </Col>
       </Row>
@@ -124,7 +137,7 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    {movies.map((movie) => (
+                    {filteredMovies.map((movie) => (
                       <Col
                         className="mb-4 mx-auto justify-content-center"
                         key={movie._id}
