@@ -20,13 +20,10 @@ export const FavoriteMovies = ({ movies, user }) => {
             md={6}
             xs={12}
           >
-            
             <MovieCard movie={movie} />
           </Col>
         ))}
-       
       </Row>
-      
     </>
   );
 };

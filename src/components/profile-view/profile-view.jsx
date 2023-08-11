@@ -4,7 +4,6 @@ import { UserEdit } from "./user-edit";
 import { Link } from "react-router-dom";
 import { FavoriteMovies } from "./favorite-movies";
 
-
 export const ProfileView = ({
   user,
   token,
@@ -45,9 +44,10 @@ export const ProfileView = ({
           onLoggedOut={onLoggedOut}
         />
         <br></br>
-        <Button variant="danger"
-        onClick={() => {
-             if (
+        <Button
+          variant="danger"
+          onClick={() => {
+            if (
               window.confirm(
                 "Are you sure you want to remove your account from our site?"
               )

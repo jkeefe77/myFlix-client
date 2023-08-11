@@ -11,9 +11,9 @@ export const MovieCard = ({ movie }) => {
         <Card.Img variant="top" src={movie.imagePath} className="border" />
         <div className="movie-description">
           <Card.Body className="text-center">
-          <Card.Title className="fw-bold">{movie.Title}</Card.Title>
-          <Card.Text className="mainviewmovies">{movie.Genres}</Card.Text>
-        </Card.Body>
+            <Card.Title className="fw-bold">{movie.Title}</Card.Title>
+            <Card.Text className="mainviewmovies">{movie.Genres}</Card.Text>
+          </Card.Body>
         </div>
       </Card>
     </Link>

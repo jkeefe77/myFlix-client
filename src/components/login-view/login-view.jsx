@@ -11,7 +11,6 @@ export const LoginView = ({ onLoggedIn }) => {
       Username: username,
       Password: password,
     };
-    
 
     fetch("https://filmsonthefly-app-ca635d09fe99.herokuapp.com/login", {
       method: "POST",
@@ -51,7 +50,7 @@ export const LoginView = ({ onLoggedIn }) => {
           required
         />
       </label>
-      
+
       <label>
         <br></br>
         Password:
@@ -61,9 +60,11 @@ export const LoginView = ({ onLoggedIn }) => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        </label>
-        
-      <button type="submit" className="d-grid gap-2 col-6 mx-auto">Login</button>
+      </label>
+
+      <button type="submit" className="d-grid gap-2 col-6 mx-auto">
+        Login
+      </button>
     </form>
   );
 };
