@@ -10,7 +10,7 @@ import {
   Row,
 } from "react-bootstrap";
 
-export const SignupView = () => {
+export const SignupView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -19,7 +19,7 @@ export const SignupView = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const data = {
+    const signupData = {
       Username: username,
       Password: password,
       Email: email,
@@ -28,27 +28,57 @@ export const SignupView = () => {
 
     fetch("https://filmsonthefly-app-ca635d09fe99.herokuapp.com/users", {
       method: "POST",
-      body: JSON.stringify(data),
+      body: JSON.stringify(signupData),
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((response) => {
-      if (response.ok) {
-        alert("Signup successful");
-        window.location.reload();
-      } else {
-        alert("Signup failed");
-      }
-    });
+    })
+      .then((response) => {
+        if (response.ok) {
+          const loginData = {
+            Username: username,
+            Password: password,
+          };
+
+          return fetch(
+            "https://filmsonthefly-app-ca635d09fe99.herokuapp.com/login",
+            {
+              method: "POST",
+              body: JSON.stringify(loginData),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              console.log("Login response: ", data);
+              if (data.user) {
+                localStorage.setItem("user", JSON.stringify(data.user));
+                localStorage.setItem("token", data.token);
+                onLoggedIn(data.user, data.token);
+                alert("Welcome!");
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+        } else {
+          alert("Username already taken.  Please try again");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
   return (
     <Container className="signupform">
-      <Row>
-        <Col>
+      <Row className="justify-content-center align-items-center">
+        <Col xs={5} sm={12} md={12}>
           <CardGroup>
             <Card>
-              <Card.Body>
+              <Card.Body className="justify-content-center align-items-center">
                 <Card.Title>Login or Signup!</Card.Title>
                 <form onSubmit={handleSubmit}>
                   <Form.Group controlId="formUsername">
@@ -102,7 +132,11 @@ export const SignupView = () => {
                         <Button
                           variant="primary"
                           type="submit"
-                          onClick={handleSubmit}
+                          onClick={(event) => {
+                            event.preventDefault();
+                            handleSubmit(event);
+                            onLoggedIn();
+                          }}
                         >
                           Submit
                         </Button>

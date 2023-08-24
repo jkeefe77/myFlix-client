@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import { Button, Col, Container } from "react-bootstrap";
+import { Modal, Button, Col, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { SimilarMovies } from "./similar-movies";
 
@@ -8,7 +8,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
   const { movieId } = useParams();
 
   const movie = movies.find((m) => m._id === movieId);
-
+  const [isShaking] = useState(false);
   const [isFavoriteMovie, setAsFavorite] = useState(
     user.FavoriteMovies.includes(movieId)
   );
@@ -17,6 +17,16 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
     setAsFavorite(user.FavoriteMovies.includes(movieId));
     window.scrollTo(0, 0);
   }, [movieId]);
+
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [showRemoveModal, setShowRemoveModal] = useState(false);
+
+  const toggleAddModal = () => {
+    setShowAddModal(!showAddModal);
+  };
+  const toggleRemoveModal = () => {
+    setShowRemoveModal(!showRemoveModal);
+  };
 
   const addFavorite = () => {
     fetch(
@@ -36,7 +46,7 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
       })
       .then((user) => {
         if (user) {
-          alert(`"${movie.Title}" was successfully added to favorites`);
+          toggleAddModal();
           setAsFavorite(true);
           updateUser(user);
         }
@@ -64,13 +74,14 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
       })
       .then((user) => {
         if (user) {
-          alert(`"${movie.Title}" was successfully deleted from favorites`);
+          toggleRemoveModal();
           setAsFavorite(false);
           updateUser(user);
+          isShaking(true);
         }
       })
       .catch((e) => {
-        alert(e);
+        console.error(e);
       });
   };
 
@@ -113,6 +124,42 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
       <Container>
         <SimilarMovies movies={movies} movie={movie} />
       </Container>
+
+      <Modal
+        show={showAddModal}
+        onHide={toggleAddModal}
+        dialogClassName="custom-modal"
+      >
+        <Modal.Body>
+          <div className="heart-animation">❤️</div>
+          <p className="text-center custom-message">
+            "{movie.Title}" was successfully added to favorites
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={toggleAddModal}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal
+        show={showRemoveModal}
+        onHide={toggleRemoveModal}
+        dialogClassName="custom-modal2"
+      >
+        <Modal.Body>
+          <div className="trash-can-animation">🗑️</div>
+          <p className="text-center-custom-message2">
+            "{movie.Title}" was successfully deleted from favorites
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={toggleRemoveModal}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };

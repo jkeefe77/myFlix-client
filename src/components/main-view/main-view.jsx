@@ -85,7 +85,12 @@ export const MainView = () => {
                   <Navigate to="/" />
                 ) : (
                   <Col className="m=2" md={5}>
-                    <SignupView />
+                    <SignupView
+                      onLoggedIn={(user, token) => {
+                        setUser(user);
+                        setToken(token);
+                      }}
+                    />
                   </Col>
                 )}
               </>

@@ -10,10 +10,6 @@ $body-bg: #a7d5f2;
   color: white;
 }
 
-.signupform {
-  width: 500px;
-}
-
 .border-light {
   background-color: #1d2f40;
   border: none;
@@ -168,4 +164,72 @@ input {
   .col-lg-6 {
     margin-top: 20px;
   }
+}
+.heart-animation {
+  font-size: 48px;
+  text-align: center;
+  animation: heartbeat 0.5s infinite;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.custom-modal {
+  .modal-content {
+    background-color: #ecca5b;
+  }
+
+  /* Customize the font size for the modal body */
+  .modal-body {
+    font-size: 24px; /* Adjust the font size as needed */
+  }
+}
+
+/* Custom styles for the message */
+.custom-message {
+  /* Customize the font size for the message */
+  font-size: 24px; /* Adjust the font size as needed */
+  color: white; /* Text color for the message */
+}
+
+.custom-modal2 {
+  .modal-content {
+    background-color: #ecca5b;
+  }
+
+  /* Customize the font size for the modal body */
+  .modal-body {
+    font-size: 24px; /* Adjust the font size as needed */
+    color: white;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.shake {
+  animation: shake 0.5s ease infinite;
 }
